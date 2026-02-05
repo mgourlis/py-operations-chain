@@ -47,14 +47,14 @@ async def main():
         OperationSpec(operation="strip"),
         OperationSpec(operation="uppercase"),
     ]
-    
+
     # Execute it
     executor = PipelineExecutor(shared_data={})
     result = await executor.execute_pipeline(
         pipeline,
         {"user": {"name": "  alice  "}}
     )
-    
+
     print(result)  # "ALICE"
 
 asyncio.run(main())
@@ -562,7 +562,7 @@ from operations_chain import TransformationOperation, register_operation
 
 class DoubleTransformation(TransformationOperation):
     """Double the input value."""
-    
+
     def get_config_schema(self):
         return {
             'required': {},
@@ -575,7 +575,7 @@ class DoubleTransformation(TransformationOperation):
                 }
             }
         }
-    
+
     async def transform(self, value, context):
         multiplier = self.config.get('times', 2)
         return value * multiplier

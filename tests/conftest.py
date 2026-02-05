@@ -2,7 +2,6 @@
 Pytest configuration for operations-chain tests.
 """
 
-import pytest
 import sys
 from pathlib import Path
 

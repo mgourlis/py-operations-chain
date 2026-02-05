@@ -7,13 +7,13 @@ with self-documenting schemas and helpful error messages.
 
 Basic Usage:
     >>> from operations_chain import PipelineExecutor, get_registry, OperationSpec
-    >>> 
+    >>>
     >>> # Define a pipeline
     >>> pipeline = [
     ...     OperationSpec(operation="extract_field", operation_config={"field": "name"}),
     ...     OperationSpec(operation="uppercase"),
     ... ]
-    >>> 
+    >>>
     >>> # Execute it
     >>> executor = PipelineExecutor(shared_data={})
     >>> result = await executor.execute_pipeline(pipeline, {"name": "alice"})
@@ -28,10 +28,10 @@ Key Concepts:
 For AI Agents:
     >>> from operations_chain import get_registry
     >>> registry = get_registry()
-    >>> 
+    >>>
     >>> # Discover available operations
     >>> registry.list_operations()
-    >>> 
+    >>>
     >>> # Get detailed docs for an operation
     >>> registry.describe_operation("extract_field")
 """

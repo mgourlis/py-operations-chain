@@ -11,25 +11,25 @@ from typing import Optional, Dict, Any
 class OperationSpec:
     """
     Value object representing a single operation in a pipeline.
-    
+
     Operations are executed in order (order_index) within the pipeline.
     This class is the bridge between JSON pipeline definitions and
     executable operation instances.
-    
+
     Attributes:
         operation: Operation name (e.g., 'extract_field', 'required')
         operation_config: Configuration dict for the operation
         order_index: Execution order within the pipeline
         is_required: If False, operation failure won't stop pipeline
         error_message: Custom error message if operation fails
-    
+
     Example (creating manually):
         >>> spec = OperationSpec(
         ...     operation="extract_field",
         ...     operation_config={"field": "user.name", "default": "Anonymous"},
         ...     is_required=True
         ... )
-    
+
     Example (from JSON):
         >>> {
         ...     "operation": "extract_field",
@@ -48,7 +48,7 @@ class OperationSpec:
     ):
         """
         Initialize an operation specification.
-        
+
         Args:
             operation: Operation name (e.g., 'extract_field', 'validate_range').
                       Must match a registered operation in the registry.
@@ -69,7 +69,7 @@ class OperationSpec:
     def to_dict(self) -> Dict[str, Any]:
         """
         Convert the operation specification to a dictionary.
-        
+
         Useful for serialization to JSON.
         """
         return {
