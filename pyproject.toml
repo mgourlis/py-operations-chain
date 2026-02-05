@@ -10,7 +10,7 @@ readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [
-    { name = "Michalis Gourlis" }
+    { name = "Myron Gourlis" }
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
